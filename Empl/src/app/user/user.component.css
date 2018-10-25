@@ -1,0 +1,20 @@
+th.innerText {
+  font-weight: normal;
+}
+
+.input-group,
+.table,
+.btn
+{
+  margin: 10px;
+}
+
+.del-ref
+{
+  margin-left: 10px;
+}
+
+.btn-add
+{
+  margin-left: 5px;
+}

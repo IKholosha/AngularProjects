@@ -1,0 +1,38 @@
+<button id='refresh' class="btn btn-primary" (click)="refresh()">Refresh</button>
+<br>
+
+<table id="users" class="table table-striped table-bordered">
+  <tr>
+    <th>User Id</th>
+    <th>User Name</th>
+    <th>Profession</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <th class = "innerText">{{user.id}}</th>
+    <th class = "innerText">{{user.name}}</th>
+    <th class = "innerText">{{user.profession}}</th>
+    <th class = "innerText"><a href="javascript:void(0);" (click)="editUser(user)">Edit</a>    <a href="javascript:void(0);" class = "del-ref" (click)="deleteUser(user)">Delete</a></th>
+
+
+  </tr>
+
+</table>
+
+<br>
+
+
+<form>
+  <div class="input-group">
+    <span class="input-group-text">User Id:</span>
+    <input [(ngModel)]="user.id" name="id">
+    <span class="input-group-text">User Name:</span>
+    <input [(ngModel)]="user.name" name="name">
+    <span class="input-group-text">Profession:</span>
+    <input [(ngModel)]="user.profession" name="profession">
+  </div>
+</form>
+
+
+<button id='save' class="btn btn-secondary" (click)="save()">Save</button>
+<button id='add' class="btn btn-secondary btn-add" (click)="addUser()">Add</button>
