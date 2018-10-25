@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Node.js</title>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            </style>
+    </head>
+    <body>
+
+        <button id='refresh'>Refresh</button>
+
+
+        <table id="users">
+            <tr>
+              <th>User Id</th>
+              <th>User Name</th>
+              <th>Profession</th>
+              <th>Action</th>
+            </tr>
+ 
+          </table>
+
+          <br>
+          <br>
+          <br>
+
+          <form>
+            User Id:
+            <input type="text" id="userid">
+            User Name:
+            <input type="text" id="username">
+            Profession:
+            <input type="text" id="profession">
+          </form>
+
+          <br>
+
+          <button id='save'>Save</button>
+          <button id='add'>Add</button>
+        
+    </body>
+    <script src="app.js"></script>
+</html>

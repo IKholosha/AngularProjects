@@ -1,0 +1,69 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="panel panel-primary">
+    <div class="panel-heading">User registration form</div>
+    <div class="panel-body">
+      <form class="css-form" name="userForm"
+            #userForm="ngForm" (ngSubmit)="onSubmit()" >
+
+        <div class="form-group">
+          <label for="userName">User name</label>
+          <input type="text" class="form-control" id="userName"
+                 name="userName" placeholder="Username"
+                 #name="ngModel" [(ngModel)]="user.name">
+        </div>
+
+        <div class="form-group">
+          <label for="userName">password1</label>
+
+          <input type="text" id="password1" class="form-control"
+                 required
+                 name="password1" [(ngModel)]="user.password1"
+                 #password1="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label for="userName">password2</label>
+
+          <input type="text" id="password2" class="form-control"
+                 required
+                 name="password2" [(ngModel)]="user.password2"
+                 #password2="ngModel" validateEqual="password1">
+
+          <span *ngIf="password2.errors && !password2.errors.validateEqual && password2.touched">
+                            Passwords should match
+                        </span>
+
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Date Of Birth</label>
+
+          <input type="text" id="dateOfBirth" class="form-control"
+                 required minlength="3"
+                 name="dateOfBirth" [(ngModel)]="user.dateOfBirth"
+                 pattern="[0-9][0-9]\.[0-1][0-9]\.[1-2][0-9][0-9][0-9]"
+                 #dateOfBirth="ngModel">
+
+          <span *ngIf="dateOfBirth.errors && dateOfBirth.errors.pattern && dateOfBirth.touched">
+                            Date of birth should be in format dd.mm.yyyy
+                        </span>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox">
+            <label><input type="checkbox" name="subscribe"
+                          [(ngModel)]="user.subscribe">
+              Subscribe for newsletters
+            </label>
+          </div>
+          <input type="text" id="email" class="form-control"
+                 name="email" [(ngModel)]="user.email" *ngIf="user.subscribe"
+                 #email="ngModel">
+        </div>
+
+        <button type="submit" class="btn btn-primary"> Submit</button>
+
+      </form>
+    </div>
+  </div>
+</div>
