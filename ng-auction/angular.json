@@ -24,10 +24,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
+              "src/data",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss",
+              "src/styles/_theme.scss"
             ],
             "scripts": []
           },
@@ -76,11 +78,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss",
+              "src/styles/_theme.scss"
             ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
+              "src/data",
               "src/assets"
             ]
           }
